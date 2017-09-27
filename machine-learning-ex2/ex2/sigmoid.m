@@ -9,8 +9,8 @@ g = zeros(size(z));
 % Instructions: Compute the sigmoid of each value of z (z can be a matrix,
 %               vector or scalar).
 
-
-
+% .をつけることで行列やベクトルだとしても四則演算ができるようにした
+g = 1 ./ (1 + e.^-z);
 
 
 % =============================================================
