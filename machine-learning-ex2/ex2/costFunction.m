@@ -20,9 +20,11 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
+% ロジスティクス回帰の公式に当てはめて theta=[0 0 0]の時のコストを求める
+J = sum(-y .* log(sigmoid(X*theta)) -(1 - y) .* log(1-sigmoid(X*theta)))/m;
 
-
-
+% 偏微分した時の各Θの勾配を求めた
+grad = sum((sigmoid(X*theta) - y) .* X)/m;
 
 
 
